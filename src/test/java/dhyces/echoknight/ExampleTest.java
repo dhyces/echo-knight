@@ -13,6 +13,6 @@ public class ExampleTest
     @Disabled("for demonstration purposes only")
     void shouldHaveLogger()
     {
-        assertNotNull(Example.LOGGER);
+        assertNotNull("Not Null!");
     }
 }
