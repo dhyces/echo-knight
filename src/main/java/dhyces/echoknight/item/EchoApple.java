@@ -1,7 +1,6 @@
 package dhyces.echoknight.item;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
@@ -21,5 +20,5 @@ public class EchoApple extends Item {
     @Override
     public SoundEvent getEatSound() {
         return super.getEatSound();
-    } StatusEffectInstance
+    }
 }
