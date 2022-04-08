@@ -18,6 +18,7 @@ allprojects {
 
     sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 
+
     // Declare dependencies
     dependencies {
         // Fabric
@@ -33,12 +34,6 @@ allprojects {
         compileOnly "org.jetbrains:annotations:${project.jetbrains_annotations_version}"
         testImplementation "org.junit.jupiter:junit-jupiter-api:${project.junit_jupiter_version}"
         testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${project.junit_jupiter_version}"
-
-        // Subprojects
-        subprojects.each {
-            implementation project(path: ":${it.name}", configuration: 'namedElements')
-            include project("${it.name}:") // nest within distribution
-        }
     }
 
     // Perform tests using the JUnit test suite
@@ -53,7 +48,7 @@ allprojects {
 
     // Add the licence to all distributions
     tasks.withType(Jar).configureEach {
-        it.from rootProject.file('LICENCE.txt')
+        it.from rootProject.file('LICENSE.txt')
     }
 
     // Process any resources
@@ -102,11 +97,6 @@ curseforge {
         // Add any additional artifacts
         addArtifact sourcesJar
         addArtifact jar
-        subprojects.each {
-            addArtifact it.remapJar
-            addArtifact it.sourcesJar
-            addArtifact it.jar
-        }
         // Add any dependencies
         relations {
             if (project.cf_relations_required) project.cf_relations_required.split(', ').each { requiredDependency it }
@@ -150,11 +140,6 @@ modrinth {
     // Add any additional artifacts
     additionalFiles.add sourcesJar
     additionalFiles.add jar
-    subprojects.each {
-        additionalFiles.add it.remapJar
-        additionalFiles.add it.sourcesJar
-        additionalFiles.add it.jar
-    }
     // Add any dependencies
     if (project.mr_relations_required) dependencies.addAll project.mr_relations_required.split(', ').collect { new ModDependency(it, 'required') }
     if (project.mr_relations_optional) dependencies.addAll project.mr_relations_optional.split(', ').collect { new ModDependency(it, 'optional') }
