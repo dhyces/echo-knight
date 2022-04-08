@@ -18,6 +18,9 @@
   "entrypoints": {
     "main": [
       "dhyces.echoknight.EchoKnight"
+    ],
+	"client": [
+      "dhyces.echoknight.EchoKnightClient"
     ]
   },
   "mixins": [
