@@ -5,7 +5,7 @@
   "name": "${name}",
   "description": "Lorem ipsum dolor sit amet",
   "authors": [
-    "[fullname]"
+    "Dhyces"
   ],
   "contact": {
     "homepage": "https://github.com/axieum/fabric-example-mod",
@@ -13,24 +13,21 @@
     "issues": "https://github.com/axieum/fabric-example-mod/issues"
   },
   "license": "CC0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/echoknight/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.modid.Example"
+      "dhyces.echoknight.EchoKnight"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "echoknight.mixins.json"
   ],
   "depends": {
     "java": ">=17",
     "minecraft": "1.18.x",
     "fabricloader": ">=0.11.3",
     "fabric": "*"
-  },
-  "recommends": {
-    "modid-sub": "*"
   },
   "suggests": {
     "modmenu": "*"

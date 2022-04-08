@@ -1,12 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.example.modid.mixin",
+  "package": "dhyces.echoknight.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [],
   "server": [],
   "client": [
-    "TitleScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
