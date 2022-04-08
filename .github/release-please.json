@@ -8,9 +8,6 @@
     ".": {
       "component": "fabric-example-mod",
       "include-component-in-tag": false
-    },
-    "example-submod": {
-      "component": "example-submod"
     }
   }
 }
